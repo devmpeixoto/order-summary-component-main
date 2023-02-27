@@ -1,0 +1,180 @@
+@charset "UTF-8";
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Red Hat Display', sans-serif;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+:root{
+    --bg-card: #fffcde;
+    --bg-price: #fff6dd;
+
+    --bg-button: #4332c0;
+
+    --titles: #272d46;
+    --paragraph: #7c7980;
+}
+
+body{
+  background-image: url('../images/pattern-background-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+}
+
+main{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card{
+  border-radius: 1rem;
+  background-color: var(--bg-card);
+  max-width: 375px;
+  height: 600px;
+  margin: 0 1rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 2px 6px 12px #4332c01f;
+}
+
+.bottom{
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.bottom h1{
+  color: var(--titles);
+  font-weight: 900;
+}
+
+.description{
+  line-height: 1.7rem;
+  padding: 0 1.5rem;
+  color: var(--paragraph);
+}
+
+.price{
+  /* border: 2px solid red; */
+  background-color: var(--bg-price);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.price-plan{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+span{
+  font-weight: 900;
+  color: var(--titles);
+}
+
+.price-plan-number{
+  color:var(--paragraph);
+  font-size: .9rem;
+  text-align: left;
+}
+
+.price a{
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.price a:hover{
+  color: #7f6ccf;
+  text-decoration: none;
+}
+
+.btn{
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-weight: 700;
+  background-color: var(--bg-button);
+  color: var(--bg-card);
+  box-shadow: 0px 8px 40px #4332c049;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.btn:hover{
+  background-color: #7f6ccf;
+  box-shadow: 0px 0px 15px #4332c0;
+}
+
+.cancel{
+  /* border: 2px solid red; */
+  color: var(--paragraph);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.cancel:hover{
+  color: var(--titles);
+}
+
+@media screen and (min-width: 1060px){
+  body{
+    background-image: url('../images/pattern-background-desktop.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
